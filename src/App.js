@@ -3,7 +3,7 @@ import './App.css';
 import StockItems from './StockItems';
 import WatchList from './WatchList';
 import 'bootstrap/dist/css/bootstrap.min.css'
-// import StockTwits from './app_component/stockTwits.component';  ========================= uncomment for the api call results
+import StockTwits from './app_component/stockTwits.component';
 
 
 
@@ -16,10 +16,9 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      // ticker_symbol: '',
-      // watchlist_items: [],
 
-      // twitt: { messages: [] }, // this.getTwits() ========================= uncomment this to make the API call
+
+      twitt: { messages: [] },
 
       items: [],
       currentItem: {
@@ -27,11 +26,11 @@ class App extends Component {
         key: ''
       },
     }
-    // this.getTwits() ========================= uncomment this to make the API call
+    // this.getTwits()
   }
 
   handleInput = e => {
-    console.log('hello from input')
+    // console.log('hello from input')
     const itemText = e.target.value
     const currentItem = { text: itemText, key: Date.now() }
     this.setState({
@@ -41,10 +40,10 @@ class App extends Component {
 
   addItem = e => {
     e.preventDefault()
-    console.log('add item upgraded')
+    // console.log('add item upgraded')
     const newItem = this.state.currentItem
     if (newItem.text !== '') {
-      console.log(newItem)
+      // console.log(newItem)
       const items = [...this.state.items, newItem]
       this.setState({
         items: items,
@@ -62,22 +61,35 @@ class App extends Component {
     })
   }
 
-
-  getTwits = async () => {
-    const api_call = await fetch(`https://api.stocktwits.com/api/2/streams/symbol/AMZN.json`);
+  loadTiwtts = async (text) => {
+    const stockName = text;
+    const api_call = await fetch(`https://api.stocktwits.com/api/2/streams/symbol/${stockName}.json`)
     const response = await api_call.json();
-    // console.log(response);
+    console.log(response);
 
     this.setState({
       twitt: response
     });
+
+
   }
+
+
+  // getTwits = async () => {
+  //   const api_call = await fetch(`https://api.stocktwits.com/api/2/streams/symbol/AMZN.json`);
+  //   const response = await api_call.json();
+
+
+  //   this.setState({
+  //     twitt: response
+  //   });
+  // }
 
 
   render() {
     return (
       <div className="App">
-        <h1> Stock list to watch </h1>
+        <h1> Add a Stock ticker to follow </h1>
         <WatchList
           addItem={this.addItem}
           inputElement={this.inputElement}
@@ -88,13 +100,13 @@ class App extends Component {
         <StockItems
           entries={this.state.items}
           deleteItem={this.deleteItem}
+          loadTiwtts={this.loadTiwtts}
         />
 
 
-        {/* <StockTwits
+        <StockTwits
           twitt={this.state.twitt}
-        // ticker_symbol={this.state.ticker_symbol} ========================= uncomment for the api call results
-        /> */}
+        />
       </div>
     );
   }

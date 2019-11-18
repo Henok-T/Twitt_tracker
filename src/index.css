@@ -20,3 +20,30 @@ code {
    padding: 10px;
    background: seashell;
  }
+
+ #twittsContent{
+  background: seashell;
+  padding:10px;
+  position: fixed;
+  width: 500px;
+  top: 130px;
+  left: 460px;
+ }
+
+ .addToList{
+   background: #00aaff;
+   padding: 15px 0 15px 0 ;
+ }
+
+ .watchListItems{
+  background: rgba(255, 252, 47, 0.37);
+  padding: 20px;
+  list-style: none;
+  margin:10px;
+}
+
+.watchListItems li {
+  background: seashell;
+}
+
+ 

@@ -3,10 +3,10 @@ import React from 'react';
 
 class StockTwits extends React.Component {
     render() {
-        console.log(this.props + 'props value from StockTwits');
+        // console.log(this.props + 'props value from StockTwits');
         return (
-            <div className="container">
-                <h1>Twitt List for ${this.props.ticker_symbol} </h1>
+            <div className="container" id='twittsContent'>
+                <h4>Twitt List for {this.props.currentItem}</h4>
                 {   //fn2 map?
                     this.props.twitt.messages.map((msg, index) => {
                         return (

@@ -9,7 +9,7 @@ class WatchList extends Component {
     render() {
         // console.log(this.props + 'props from Watchlist render');
         return (
-            <div className="todoListMain">
+            <div className="addToList">
                 <div className="header">
                     <form onSubmit={this.props.addItem}>
                         <input
