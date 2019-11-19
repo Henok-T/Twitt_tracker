@@ -6,7 +6,11 @@ class StockTwits extends React.Component {
         // console.log(this.props + 'props value from StockTwits');
         return (
             <div className="container rounded" id='twittsContent'>
-                <h4>Twitt List for {this.props.stockName}</h4>
+                <h4>Twitt List
+                     {this.props.twitt.symbol && ` for $ ${this.props.twitt.symbol.symbol}`}
+                    {this.props.twitt.messages && ` Twitt Count: ${this.props.twitt.messages.length}`}
+                </h4>
+
                 {   //fn2 map?
                     this.props.twitt.messages.map((msg, index) => {
                         return (

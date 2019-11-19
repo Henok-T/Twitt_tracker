@@ -44,6 +44,26 @@ code {
   margin-top:10px;
 }
 
+.addToList input{
+  background-color:transparent;  
+    color:#fff;
+    border: 0;
+    border-bottom: 2px solid seashell;
+    border-radius: 0;
+}
+
+.addToList input:focus{
+  background-color: transparent;
+  box-shadow:none;
+  outline: 0 none;
+  border-radius: 10px;
+}
+.addToList input::-webkit-input-placeholder{
+  color:gray;
+  font-style: italic;
+  font-size: 12px;
+}
+
  .watchListItems{
   background: #0e09090f;
   padding: 10px;

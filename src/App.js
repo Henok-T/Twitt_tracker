@@ -13,12 +13,12 @@ import Navbar from './Navbar';
 // Consumer secret: 286aec938c3c0573cd3d734e1b9e13dd60a1d0f7
 
 class App extends Component {
-  inputElement = React.createRef()
+  // inputElement = React.createRef()
   constructor() {
     super();
     this.state = {
 
-
+      error: "",
       twitt: { messages: [] },
 
       items: [],
@@ -37,6 +37,7 @@ class App extends Component {
     this.setState({
       currentItem,
     })
+
   }
 
   addItem = e => {
@@ -53,24 +54,46 @@ class App extends Component {
     }
   }
 
-  deleteItem = key => {
+  deleteItem = (symbol, key) => {
     const filteredItems = this.state.items.filter(item => {
       return item.key !== key
     })
-    this.setState({
-      items: filteredItems,
-    })
+
+    if (this.state.twitt.symbol && this.state.twitt.symbol.symbol.toLowerCase() === symbol.toLowerCase()) {
+      this.setState({
+        items: filteredItems,
+        twitt: { messages: [] }
+      })
+    } else {
+      this.setState({
+        items: filteredItems,
+      })
+    }
+
   }
 
   loadTiwtts = async (text) => {
     const stockName = text;
-    const api_call = await fetch(`https://api.stocktwits.com/api/2/streams/symbol/${stockName}.json`)
-    const response = await api_call.json();
-    console.log(response);
+    try {
+      const api_call = await fetch(`https://api.stocktwits.com/api/2/streams/symbol/${stockName}.json`);
+      const data = await api_call.json();
+      console.log(data);
+      if (data.response.status === 200) {
+        this.setState({
+          twitt: data,
+        });
+      } else {
+        alert("we have a problem", JSON.stringify(data.response.errors));
+        this.setState({
+          error: "we have error",
+        });
+      }
+    } catch (err) {
+      console.log("error from api call ", err)
+    }
 
-    this.setState({
-      twitt: response,
-    });
+
+
 
 
   }
@@ -104,7 +127,6 @@ class App extends Component {
           deleteItem={this.deleteItem}
           loadTiwtts={this.loadTiwtts}
         />
-
 
         <StockTwits
           twitt={this.state.twitt}
