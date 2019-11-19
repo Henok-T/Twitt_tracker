@@ -4,6 +4,7 @@ import StockItems from './StockItems';
 import WatchList from './WatchList';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import StockTwits from './app_component/stockTwits.component';
+import Navbar from './Navbar';
 
 
 
@@ -47,7 +48,7 @@ class App extends Component {
       const items = [...this.state.items, newItem]
       this.setState({
         items: items,
-        currentItem: { text: '', key: '' },
+        currentItem: { text: '', key: '' }
       })
     }
   }
@@ -68,7 +69,7 @@ class App extends Component {
     console.log(response);
 
     this.setState({
-      twitt: response
+      twitt: response,
     });
 
 
@@ -89,7 +90,8 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <h1> Add a Stock ticker to follow </h1>
+        <Navbar />
+        <h5 className='text-left'> Add your fav stock to your watch list and track what people are saying about it.  </h5>
         <WatchList
           addItem={this.addItem}
           inputElement={this.inputElement}

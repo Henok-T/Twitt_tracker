@@ -5,8 +5,8 @@ class StockTwits extends React.Component {
     render() {
         // console.log(this.props + 'props value from StockTwits');
         return (
-            <div className="container" id='twittsContent'>
-                <h4>Twitt List for {this.props.currentItem}</h4>
+            <div className="container rounded" id='twittsContent'>
+                <h4>Twitt List for {this.props.stockName}</h4>
                 {   //fn2 map?
                     this.props.twitt.messages.map((msg, index) => {
                         return (
@@ -14,7 +14,7 @@ class StockTwits extends React.Component {
                                 <div className="card-body">
                                     <p className="card-text">
                                         <span className='py-4'><span className="font-weight-bold">Body:</span> {msg.body}</span><br />
-                                        <span className='py-4'><span className="font-weight-bold">Twtted:</span> {msg.created_at}</span><br />
+                                        <span className='py-4'><span className="font-weight-bold">Twitted:</span> {msg.created_at}</span><br />
                                         {/* <span className="card-link bnt btn-primary px-1 py-1 rounded">Learn more</span>
                                         <span className="card-link bnt btn-danger px-1 py-1 rounded">Delete</span> */}
                                     </p>
