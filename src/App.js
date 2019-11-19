@@ -73,33 +73,28 @@ class App extends Component {
     try {
       const api_call = await fetch(`https://api.stocktwits.com/api/2/streams/symbol/${stockName}.json`);
       const data = await api_call.json();
-      console.log(data);
+      //console.log(data);
       if (data.response.status === 200) {
         this.setState({
           twitt: data,
         });
-      } else {
-        alert("we have a problem", JSON.stringify(data.response.errors));
+      }
+      else {
+        alert("we have a problem", JSON.stringify(data.errors.message));
         this.setState({
           error: "we have error",
         });
       }
-    } catch (err) {
+    }
+    catch (err) {
       console.log("error from api call ", err)
     }
-
-
-
-
-
   }
 
 
   // getTwits = async () => {
   //   const api_call = await fetch(`https://api.stocktwits.com/api/2/streams/symbol/AMZN.json`);
   //   const response = await api_call.json();
-
-
   //   this.setState({
   //     twitt: response
   //   });
@@ -110,7 +105,8 @@ class App extends Component {
     return (
       <div className="App">
         <Navbar />
-        <h5 className='text-left'> Add your fav stock to your watch list and track what people are saying about it.  </h5>
+        <p className=''> What are investors and traders saying about your favorite stock?</p>
+        <span className=''>Add it to your watch list and follow. </span>
         <WatchList
           addItem={this.addItem}
           inputElement={this.inputElement}

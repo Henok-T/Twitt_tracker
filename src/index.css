@@ -12,9 +12,12 @@ code {
     monospace;
 }
 
-.App h5 {
+.App p {
   margin-left: 20px;
   margin-top: 20px;
+  font-family: 'Ubuntu', sans-serif;
+  font-style: italic;
+  margin-bottom: 2px;
 }
 
 .formContainer{
@@ -50,6 +53,8 @@ code {
     border: 0;
     border-bottom: 2px solid seashell;
     border-radius: 0;
+    text-align: center;
+    
 }
 
 .addToList input:focus{
@@ -74,6 +79,7 @@ code {
 
 .watchListItems li {
   background: seashell;
+  font-family: 'Ubuntu', sans-serif;
 }
 
 #headerWithLogo{
@@ -89,9 +95,12 @@ code {
 }
 
 #headerWithLogo .brandName {
-  margin-top:10px;
+  margin-top:20px;
   position: absolute;
   margin-left: 10px;
+  font-family: 'Titillium Web', sans-serif;
+  font-weight: 900;
+  font-size:24px;
+  font-style: italic;
 }
-
  

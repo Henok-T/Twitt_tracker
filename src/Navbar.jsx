@@ -6,7 +6,7 @@ const Navbar = props => {
     return (
         <div id='headerWithLogo'>
             <img src={logo} width="80" height="80" class="d-inline-block align-top" alt="imageLogo" />
-            <span className='brandName'>StockTwitts Tracker</span>
+            <span className='brandName'>STOCKTWITS TRACKER</span>
         </div>
 
 
