@@ -8,10 +8,6 @@ import Navbar from './Navbar';
 
 
 
-// https://api.stocktwits.com/api/2/streams/symbol/AAPL.json
-// Consumer key: ca8d6374e820207e
-// Consumer secret: 286aec938c3c0573cd3d734e1b9e13dd60a1d0f7
-
 class App extends Component {
   // inputElement = React.createRef()
   constructor() {
