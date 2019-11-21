@@ -2,6 +2,7 @@
   "name": "twitt_tracker",
   "version": "0.1.0",
   "private": true,
+  "proxy": "https://api.stocktwits.com/api/2/streams/symbol",
   "dependencies": {
     "@material-ui/core": "^4.6.1",
     "bootstrap": "^4.3.1",
