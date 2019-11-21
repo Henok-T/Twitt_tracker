@@ -74,21 +74,25 @@ class App extends Component {
   loadTiwtts = async (text) => {
     const stockName = text;
     try {
-      const api_call = await fetch(`https://api.stocktwits.com/api/2/streams/symbol/${stockName}.json`);
-      const data = await api_call.json();
-      //console.log(data);
-      if (data.response.status === 200) {
-        this.setState({
-          twitt: data
-        });
+      const proxyUrl = 'https://cors-anywhere.herokuapp.com/'
+      const targetUrl = `https://api.stocktwits.com/api/2/streams/symbol/${stockName}.json`
+      fetch(proxyUrl + targetUrl)
+        .then(res => res.json())
+        .then(data => {
+          //console.table(data);
+          if (data.response.status === 200) {
+            this.setState({
+              twitt: data
+            });
 
-      }
-      else {
-        alert("we have a problem", JSON.stringify(data.errors.message));
-        this.setState({
-          error: "we have error",
-        });
-      }
+          }
+          else {
+            alert("we have a problem", JSON.stringify(data.errors.message));
+            this.setState({
+              error: "we have error",
+            });
+          }
+        })
     }
     catch (err) {
       console.log("error from api call ", err)
