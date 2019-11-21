@@ -77,7 +77,12 @@ class App extends Component {
       if (data.response.status === 200) {
         this.setState({
           twitt: data,
+          headers: {
+            'Access-Control-Allow-Origin': '*',
+            'Content-Type': 'application/json'
+          }
         });
+
       }
       else {
         alert("we have a problem", JSON.stringify(data.errors.message));
@@ -107,6 +112,7 @@ class App extends Component {
         <Navbar />
         <p className=''> What are investors and traders saying about your favorite stock?</p>
         <span className=''>Add it to your watch list and follow. </span>
+        <span className='testText'> Added header line 80 (09:45) </span>
         <WatchList
           addItem={this.addItem}
           inputElement={this.inputElement}
