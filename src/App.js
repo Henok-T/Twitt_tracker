@@ -13,11 +13,10 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      headers: {
-        'Access-Control-Allow-Origin': '',
-        'Content-Type': ''
-      },
 
+      headers: {
+        accept: "Accept: application/json"
+      },
       error: "",
       twitt: { messages: [] },
 
@@ -80,11 +79,7 @@ class App extends Component {
       //console.log(data);
       if (data.response.status === 200) {
         this.setState({
-          twitt: data,
-          headers: {
-            'Access-Control-Allow-Origin': '*',
-            'Content-Type': 'application/json'
-          }
+          twitt: data
         });
 
       }
