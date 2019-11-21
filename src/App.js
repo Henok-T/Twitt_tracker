@@ -13,6 +13,10 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
+      headers: {
+        'Access-Control-Allow-Origin': '',
+        'Content-Type': ''
+      },
 
       error: "",
       twitt: { messages: [] },
@@ -71,7 +75,7 @@ class App extends Component {
   loadTiwtts = async (text) => {
     const stockName = text;
     try {
-      const api_call = await fetch(`https://api.stocktwits.com/api/2/streams/symbol/${stockName}.json`);
+      const api_call = await fetch(`/${stockName}.json`);
       const data = await api_call.json();
       //console.log(data);
       if (data.response.status === 200) {
