@@ -1,33 +1,25 @@
 import React from 'react';
 
 
+
 class StockTwits extends React.Component {
     render() {
         return (
-            <div className="rounded">
+            <div className="rounded clearfix py-2 " id='twittMessageItems'>
                 <h6>Twitt List
                      {this.props.twitt.symbol && ` for $ ${this.props.twitt.symbol.symbol}`}
-                    {this.props.twitt.messages && ` Twitt Count: ${this.props.twitt.messages.length}`}
+                    {this.props.twitt.messages && ` Count: ${this.props.twitt.messages.length}`}
                 </h6>
 
-                {   //fn2 map?
+                {
                     this.props.twitt.messages.map((msg, index) => {
                         return (
-                            <div className="cards bg-light text-dark mb-2 border border-info rounded text-left" key={index.toString()}> {/* fn1: Key?? */}
+                            <div className="cards bg-light text-dark mb-2 border border-info rounded text-left" key={index.toString()}>
                                 <div className="card-body">
                                     <p className="card-text">
+                                        <span className='py-4'> {msg.user.name} @{msg.created_at} posted: </span><br />
+                                        <span className='py-4'><span className="font-weight-bold"> </span> {msg.body}</span><br />
 
-
-                                        <span className='py-4'> <img id='avatar' src="../src/assets/img_avatar.png" alt="Avatar" className="avatar"></img> {msg.user.name} @{msg.created_at}</span><br />
-                                        <span className='py-4'><span className="font-weight-bold">Body:</span> {msg.body}</span><br />
-
-                                        {/* <span className='py-4'><span className="font-weight-bold">User:</span> {msg.user.name} has {msg.user.watchlist_stocks_count} in his watchlist</span><br />
-                                        <span className='py-4'><span className="font-weight-bold">Body:</span> {msg.body}</span><br />
-                                        <span className='py-4'><span className="font-weight-bold">Twitted:</span> {msg.created_at}</span><br /> */}
-
-
-                                        {/* <span className="card-link bnt btn-primary px-1 py-1 rounded">Learn more</span>
-                                        <span className="card-link bnt btn-danger px-1 py-1 rounded">Delete</span> */}
                                     </p>
                                 </div>
                             </div>
@@ -41,9 +33,3 @@ class StockTwits extends React.Component {
 
 export default StockTwits;
 
-//Footnotes: 
-//fn1: we are providing a unique key to each element in the array, so that when updating, 
-//      it only updates the element which needed the update. 
-//      Without this unique key, using react is useless. 
-
-// fn2: Map is a loooping function  which returns a new array eveytime it updates. It is a built-in array function. 

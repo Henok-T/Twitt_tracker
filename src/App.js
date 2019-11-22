@@ -8,6 +8,7 @@ import Navbar from './Navbar';
 
 
 
+
 class App extends Component {
   constructor() {
     super();
@@ -99,16 +100,15 @@ class App extends Component {
     return (
       <div className="container-fluid App">
         <div class="row">
-          <div class="col align-self-start">
+          <div class="col">
             <Navbar />
-            <p className=''> What are investors and traders saying about your favorite stock?</p>
+            <p className=''> What're traders saying about your stock?</p>
             <span className=''>Add it to your watch list and follow. </span>
-            <span className='testText'> Added header line 80 (09:45) </span>
           </div>
         </div>
 
         <div class="row">
-          <div class="col align-self-center">
+          <div class="col col-md-6 offset-md-3">
             <WatchList
               addItem={this.addItem}
               inputElement={this.inputElement}
@@ -119,14 +119,14 @@ class App extends Component {
         </div>
 
         <div class="row">
-          <div class="col">
+          <div class="col col-md-4">
             <StockItems
               entries={this.state.items}
               deleteItem={this.deleteItem}
               loadTiwtts={this.loadTiwtts}
             />
           </div>
-          <div class="col">
+          <div class="col col-md-8">
             <StockTwits
               twitt={this.state.twitt}
             />
