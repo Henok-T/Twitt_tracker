@@ -3,13 +3,10 @@ import React, { Component } from 'react';
 class StockItems extends Component {
     addStocks = item => {
         return (
-            <div className="cards bg-light text-dark mb-2 border border-info rounded text-left">
-                <div className="card-body py-2 text-center ">
-                    <li key={item.key}>{item.text.toUpperCase()}
-                        <span className='card-link bnt btn-info rounded ml-4 py-1 px-1 ' onClick={this.props.loadTiwtts.bind(this, item.text)}>Twits</span>
-                        <span className='card-link bnt btn-warning rounded float-right mr-4  px-1 ' onClick={() => this.props.deleteItem(item.text, item.key)}>Delete</span>
-                    </li>
-                </div>
+            <div className=" bg-light text-dark mb-2 py-2 border border-info rounded d-flex justify-content-around">
+                <li className=' text-light bg-dark py-1 px-2  rounded ' key={item.key}>${item.text.toUpperCase()}</li>
+                <li className=' py-2 px-2 rounded' id='twittBtn' onClick={this.props.loadTiwtts.bind(this, item.text)}>Twits</li>
+                <li className='  pt-2 px-2 rounded' id='dltBtn' onClick={() => this.props.deleteItem(item.text, item.key)}>Delete</li>
             </div>
         )
     }
@@ -19,9 +16,9 @@ class StockItems extends Component {
         const listItems = stockEntries.map(this.addStocks)
 
         return (
-            <ul className='watchListItems py-2 rounded justify-content-center'>
+            <ul className='watchListItems py-2 rounded '>
                 <h6>My Watch-List</h6>
-                {listItems}
+                <span>{listItems}</span>
             </ul>
         );
     }

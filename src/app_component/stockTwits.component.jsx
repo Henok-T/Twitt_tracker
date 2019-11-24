@@ -14,12 +14,12 @@ class StockTwits extends React.Component {
                 {
                     this.props.twitt.messages.map((msg, index) => {
                         return (
-                            <div className="cards bg-light text-dark mb-2 border border-info rounded text-left" key={index.toString()}>
-                                <div className="card-body">
+                            <div className="cards bg-light  text-dark mb-2 border border-info rounded text-left" key={index.toString()}>
+                                <div className="card-body py-0 pb-1 clearfix">
                                     <p className="card-text">
-                                        <span className='py-4'> {msg.user.name} @{msg.created_at} posted: </span><br />
-                                        <span className='py-4'><span className="font-weight-bold"> </span> {msg.body}</span><br />
-
+                                        <span className='twitBody'><span className="font-weight-bold"> </span> {msg.body}</span><br />
+                                        <span className='rounded px-1 py-1 mr-2 userName'> {msg.user.name}  </span>
+                                        <span className='rounded px-1 py-1 mr-2 twitDate'> {msg.created_at} </span>
                                     </p>
                                 </div>
                             </div>
