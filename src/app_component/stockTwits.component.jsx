@@ -1,4 +1,5 @@
 import React from 'react';
+import moment from 'moment';
 
 
 
@@ -19,7 +20,7 @@ class StockTwits extends React.Component {
                                     <p className="card-text">
                                         <span className='twitBody'><span className="font-weight-bold"> </span> {msg.body}</span><br />
                                         <span className='rounded px-1 py-1 mr-2 userName'> {msg.user.name}  </span>
-                                        <span className='rounded px-1 py-1 mr-2 twitDate'> {msg.created_at} </span>
+                                        <span className='rounded px-1 py-1 mr-2 twitDate'> {moment(msg.created_at).format('MMM Do YY, h:mm:ss a')} </span>
                                     </p>
                                 </div>
                             </div>

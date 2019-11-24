@@ -98,12 +98,12 @@ class App extends Component {
 
   render() {
     return (
-      <div className="container-fluid App">
+      <div className="container App">
         <div class="row">
           <div class="col">
             <Navbar />
-            <p className=''> What're traders saying about your stock?</p>
-            <span className=''>Add it to your watch list and follow. </span>
+            <p className='subTitle'> What're traders saying about your stock?</p>
+            <span className='subTitle'>Add it to your watch list and follow. </span>
           </div>
         </div>
 
@@ -118,7 +118,7 @@ class App extends Component {
           </div>
         </div>
 
-        <div class="row">
+        <div class="row" id='stockAndTwit'>
           <div class="col col-md-4">
             <StockItems
               entries={this.state.items}

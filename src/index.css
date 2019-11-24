@@ -26,7 +26,6 @@ code {
 .App p {
   margin-top: 20px;
   font-family: 'Ubuntu', sans-serif;
-  font-style: italic;
   margin-bottom: 2px;
 }
  .wathclistbtns{
@@ -85,25 +84,41 @@ code {
 }
 
 #twittBtn{
-  background:lightgray;
+  /* background:lightgray; */
   font-size: 13px;
   font-style: italic;
   color:#000;
+  border-style: solid;
+  border-color: rgba(142, 188, 248, 0.767);
+  border-radius: 50%;
 }
 
 #dltBtn{
-  font-size: 13px;
-  font-style: italic;
-  background:rgb(247, 93, 72);
+  font-size: 14px;
   color:#000;
+  border-style: solid;
+  border-color: rgba(250, 152, 6, 0.726);
+  border-radius: 50%;
+}
+
+#stockAndTwit{
+  background:transparent;
+}
+
+#twittBtn:hover{
+  cursor: pointer;
+  background: rgba(174, 227, 245, 0.63);
+}
+
+#dltBtn:hover{
+  cursor: pointer;
+  background: rgba(245, 172, 113, 0.719);
 }
 
 #headerWithLogo{
-  /* background: #00aaff; */
-  padding: 10px;
-  padding-left: 30px;
+  padding-top: 10px;
+  padding-left: 0px;
   text-align: left;
-  font-size: 30px;;
   font-weight: 900;
   color:#000;
   position: relative;
@@ -111,12 +126,11 @@ code {
 }
 
 #headerWithLogo .brandName {
-  margin-top:20px;
+  margin-top:11px;
   position: absolute;
-  margin-left: 10px;
   font-family: 'Titillium Web', sans-serif;
   font-weight: 900;
-  font-size:20px;
+  font-size:18px;
   font-style: italic;
 }
 
@@ -125,6 +139,7 @@ code {
   color:#000;
   border-radius: 50%;
   font-size: 10px;
+  font-style: italic;
 }
 
 .card {
@@ -140,4 +155,27 @@ code {
   body {
     padding:0px!important;
   }
+
+  #stockAndTwit{
+    display: block;
+  }
+
+  #headerWithLogo{
+    font-size: 20px;
+    font-weight: 100;
+    position: relative;
+    padding-left: 14%;
+  }
+
+  .twitBody{
+    font-size: 12px;
+  }
+  .App .subTitle, .App .subTitle span {
+    font-size: 13px;
+  }
+  #tickerSymbol{
+    font-size: 14px;
+    padding-top:10px!important;
+  }
+  
 }
