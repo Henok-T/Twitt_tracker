@@ -135,11 +135,13 @@ code {
 }
 
 .card-text >.userName,  .card-text > .twitDate {
-  background:lightgray;
+  background:lightgray; 
   color:#000;
   border-radius: 50%;
   font-size: 10px;
   font-style: italic;
+  margin-top:-30px!important;
+  
 }
 
 .card {
@@ -148,6 +150,24 @@ code {
 .card-text {
   word-wrap: break-word!important;
 }
+
+#imgInPost{
+  width:100%;
+  overflow: hidden;
+  align-self: center;
+}
+
+#userImg{
+  border-radius:50%;
+  margin-right:10px;
+  
+}
+
+/* #imgInPost:hover{
+  transform: scale(2.5);
+  overflow: hidden;
+  align-self: center;
+} */
 
 
 @media only screen and (max-width: 767px){
