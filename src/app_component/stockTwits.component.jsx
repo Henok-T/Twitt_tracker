@@ -8,7 +8,7 @@ class StockTwits extends React.Component {
         return (
             <div className="rounded clearfix py-2 " id='twittMessageItems'>
                 <h6>Twitt List
-                     {this.props.twitt.symbol && ` for $ ${this.props.twitt.symbol.symbol}`}
+                    {this.props.twitt.symbol && ` for ${this.props.twitt.symbol.title}`}
                     {this.props.twitt.messages && ` Count: ${this.props.twitt.messages.length}`}
                 </h6>
 
