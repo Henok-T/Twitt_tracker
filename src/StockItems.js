@@ -15,12 +15,16 @@ class StockItems extends Component {
         const stockEntries = this.props.entries
         const listItems = stockEntries.map(this.addStocks)
 
-        return (
-            <ul className='watchListItems py-2 rounded '>
-                <h6>My Watch-List</h6>
-                <span>{listItems}</span>
-            </ul>
-        );
+        if (listItems.length === 0) {
+            return null;
+        } else {
+            return (
+                <ul className='watchListItems py-2 rounded '>
+                    <h6>My Watch-List</h6>
+                    <span>{listItems}</span>
+                </ul>
+            );
+        }
     }
 }
 

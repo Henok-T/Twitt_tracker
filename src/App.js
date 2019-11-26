@@ -76,7 +76,7 @@ class App extends Component {
       fetch(proxyUrl + targetUrl)
         .then(res => res.json())
         .then(data => {
-          console.table(data);
+          //console.table(data);
           if (data.response.status === 200) {
             this.setState({
               twitt: data
@@ -96,6 +96,8 @@ class App extends Component {
       return e;
     }
   }
+
+
 
   render() {
     return (
