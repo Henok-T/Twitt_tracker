@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import './App.css';
+import './Script.js';
 import StockItems from './StockItems';
 import WatchList from './WatchList';
-import 'bootstrap/dist/css/bootstrap.min.css'
+import 'bootstrap/dist/css/bootstrap.min.css';
 import StockTwits from './app_component/stockTwits.component';
 import Navbar from './Navbar';
 
@@ -132,7 +133,6 @@ class App extends Component {
             />
           </div>
         </div>
-
       </div>
     );
   }

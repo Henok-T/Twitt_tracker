@@ -12,7 +12,7 @@ class WatchList extends Component {
                         onChange={this.props.handleInput}
                         className="form-control"
                     />
-                    <button type="submit" className='btn btn-primary mb-2'> Add Stock </button>
+                    <button type="submit" id='addStockBtn' className='btn  mb-2'> Add Stock </button>
                 </form>
             </div>
         );

@@ -8,8 +8,8 @@ class StockTwits extends React.Component {
         return (
             <div className="rounded clearfix py-2 " id='twittMessageItems'>
                 <h6>Twitt List
-                    {this.props.twitt.symbol && ` for ${this.props.twitt.symbol.title}`}
-                    {this.props.twitt.messages && ` Count: ${this.props.twitt.messages.length}`}
+                    {this.props.twitt.symbol && ` for "${this.props.twitt.symbol.title}" has arrived. Click button below to load.`}
+                   <span class='float-right' id='twittCount'>{this.props.twitt.messages && ` Twitt Count: ${this.props.twitt.messages.length}`}</span> 
                 </h6>
 
                 {
@@ -23,10 +23,11 @@ class StockTwits extends React.Component {
                         }
                         if(msg.user.avatar_url ){
                            userAvatar = msg.user.avatar_url;
-                            
                         }
+
+
                         return (
-                            <div className="cards bg-light  text-dark mb-2 border border-info rounded text-left" key={index.toString()}>
+                            <div className="twittLista cards bg-light  text-dark mb-2 border border-info rounded text-left" key={index.toString()}>
                                 <div className="card-body py-0 pb-1 clearfix">
                                     <p className="card-text">
                                         <object id='userImg' data= {userAvatar} type="image/jpg"><div></div></object> <br />
@@ -37,9 +38,13 @@ class StockTwits extends React.Component {
                                     </p>
                                 </div>
                             </div>
+                            
+                            
                         );
                     })
                 }
+               <button href="#" id="loadMore" className='btn mb-2'>Load More</button>
+               <p className="totop pull-right"> <a href="#top">Back to top</a> </p>
             </div >
         );
     }
