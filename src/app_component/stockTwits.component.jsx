@@ -5,17 +5,26 @@ import moment from 'moment';
 
 class StockTwits extends React.Component {
     render() {
-        // if (this.props.twitt === true) {
-        //     alert('response arrived');
-        //     console.log('response JUST arrived');
-        // } else {
-        //     console.log('response NOT YET arrived');
-        // }
+        // console.log(this.props.twitt);
+        // if (this.props.twitt.messages.length === 0) {
+        //     return null;
+        // } 
         return (
+
+            // <div>
+            //     {this.state.isLoading &&
+            //         <div>Loading.. please wait!</div>
+            //     }
+            //     {!this.state.isLoading &&
+            //         <div>My data has arrived!</div>
+            //     }
+            // </div>
+
+
             <div className="rounded clearfix py-2 " id='twittMessageItems'>
-                <h6>Twitt List
-                    {this.props.twitt.symbol && ` for "${this.props.twitt.symbol.title}" has arrived. Click button below to load.`}
-                    <span class='float-right' id='twittCount'>{this.props.twitt.messages && ` Twitt Count: ${this.props.twitt.messages.length}`}</span>
+                <h6>Twitt List for
+                       <span id='tickerName'> {this.props.twitt.symbol && ` ${this.props.twitt.symbol.title} `}</span>
+                    <span class='float-right' id='twittCount'>{this.props.twitt.messages && ` Total Twitts: ${this.props.twitt.messages.length}`}</span>
                 </h6>
 
                 {
@@ -49,10 +58,11 @@ class StockTwits extends React.Component {
                         );
                     })
                 }
-                <button href="#" id="loadMore" className='btn mb-2'>Load More</button>
-                <p className="totop pull-right"> <a href="#top">Back to top</a> </p>
             </div >
         );
+
+
+
     }
 };
 

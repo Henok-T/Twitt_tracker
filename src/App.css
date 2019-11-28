@@ -22,3 +22,9 @@
 .App-link {
   color: #09d3ac;
 }
+
+.App p {
+  margin-top: 20px;
+  font-family: 'Ubuntu', sans-serif;
+  margin-bottom: 2px;
+}

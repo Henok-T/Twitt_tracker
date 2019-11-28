@@ -23,11 +23,6 @@ code {
     monospace;
 }
 
-.App p {
-  margin-top: 20px;
-  font-family: 'Ubuntu', sans-serif;
-  margin-bottom: 2px;
-}
  .wathclistbtns{
    padding: 4px;
  }
@@ -42,6 +37,7 @@ code {
 
 .addToList button{
   margin-top:10px;
+  border-radius:20px;
 }
 
 .addToList input{
@@ -172,10 +168,6 @@ code {
   border-top-left-radius: 7px;
 }
 
-.twittLista { 
-  display:none; 
-}
-
 #addStockBtn {
   background:#b6b8ad;
   color: #000;
@@ -183,6 +175,16 @@ code {
   font-size:14px;
   border: solid 1px lightblue;
 }
+
+#tickerName{
+  font-size:1.2rem;
+  font-style: italic;
+  border: solid 1px lightblue;
+  padding: 5px;
+  border-radius:20px;
+  margin-left: 5px;
+}
+
 
 #twittMessageItems > #loadMore { 
   background:#b6b8ad;

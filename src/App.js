@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './App.css';
-import './Script.js';
 import StockItems from './StockItems';
 import WatchList from './WatchList';
 import 'bootstrap/dist/css/bootstrap.min.css';
