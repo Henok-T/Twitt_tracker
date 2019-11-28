@@ -6,14 +6,10 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import StockTwits from './app_component/stockTwits.component';
 import Navbar from './Navbar';
 
-
-
-
 class App extends Component {
   constructor() {
     super();
     this.state = {
-
       headers: {
         accept: "Accept: application/json"
       },
@@ -96,8 +92,6 @@ class App extends Component {
     }
   }
 
-
-
   render() {
     return (
       <div className="container App">
@@ -139,36 +133,3 @@ class App extends Component {
   }
 }
 export default App;
-
-
-
-/*
-<div class="container">
-
-  <div class="row">
-    <div class="col align-self-start">
-      1of 1 ================================THE NAVBAR
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col align-self-center">
-      1 of 1 THE SEARCH FORM
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col">
-      1 of 2 THE FAVORITE WATCHLIS OF STOCK===============
-    </div>
-
-    <div class="col">
-      2 of 2 THE JSON DATA RESPONSE
-    </div>
-  </div>
-
-</div>
-
-
-
-*/

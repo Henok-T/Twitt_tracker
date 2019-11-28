@@ -5,10 +5,11 @@ import moment from 'moment';
 
 class StockTwits extends React.Component {
     render() {
-        // console.log(this.props.twitt);
-        // if (this.props.twitt.messages.length === 0) {
-        //     return null;
-        // } 
+        console.log(this.props.twitt);
+        if (this.props.twitt.messages.length === 0) {
+            return null;
+        }
+
         return (
 
             // <div>
@@ -20,8 +21,9 @@ class StockTwits extends React.Component {
             //     }
             // </div>
 
-
             <div className="rounded clearfix py-2 " id='twittMessageItems'>
+
+
                 <h6>Twitt List for
                        <span id='tickerName'> {this.props.twitt.symbol && ` ${this.props.twitt.symbol.title} `}</span>
                     <span class='float-right' id='twittCount'>{this.props.twitt.messages && ` Total Twitts: ${this.props.twitt.messages.length}`}</span>
