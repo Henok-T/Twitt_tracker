@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './watchList.style.css';
+
 
 class WatchList extends Component {
     render() {

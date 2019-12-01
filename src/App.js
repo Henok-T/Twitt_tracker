@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import './App.css';
-import StockItems from './StockItems';
-import WatchList from './WatchList';
+import StockItems from './app_component/StockItems';
+import WatchList from './app_component/WatchList';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import StockTwits from './app_component/stockTwits.component';
-import Navbar from './Navbar';
+import StockTwits from './app_component/stockTwits';
+import Navbar from './app_component/Navbar';
+// import Navbar from './app_component/Navbar';
 
 class App extends Component {
   constructor() {
@@ -13,6 +14,9 @@ class App extends Component {
       headers: {
         accept: "Accept: application/json"
       },
+      loading: false,
+      currentPage: 1,
+      twittsPerPage: 3,
       error: "",
       twitt: { messages: [] },
 
@@ -21,7 +25,15 @@ class App extends Component {
         text: '',
         key: ''
       },
-    }
+    };
+
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick(event) {
+    this.setState({
+      currentPage: Number(event.target.id)
+    });
   }
 
   handleInput = e => {
@@ -32,6 +44,8 @@ class App extends Component {
     })
 
   }
+
+  // Adding stock item to watch list
 
   addItem = e => {
     e.preventDefault()
@@ -44,6 +58,8 @@ class App extends Component {
       })
     }
   }
+
+  // Deleting stock item from watch list
 
   deleteItem = (symbol, key) => {
     const filteredItems = this.state.items.filter(item => {
@@ -63,7 +79,13 @@ class App extends Component {
 
   }
 
+  // The API call
+
   loadTiwtts = async (text) => {
+    this.setState({
+      loading: true,
+    });
+
     const stockName = text;
     try {
       const proxyUrl = 'https://cors-anywhere.herokuapp.com/'
@@ -74,14 +96,15 @@ class App extends Component {
           //console.table(data);
           if (data.response.status === 200) {
             this.setState({
-              twitt: data
+              twitt: data,
+              loading: false
             });
-
           }
           else {
             alert("Ops! Something went wrong. Pls Double check the ticker spelling and try again.", JSON.stringify(data.errors.message));
             this.setState({
               error: "we have error",
+              loading: false
             });
           }
         })
@@ -92,19 +115,49 @@ class App extends Component {
     }
   }
 
+
   render() {
+
+    // Pagination logic
+    const { twitt, currentPage, twittsPerPage } = this.state;
+
+    // Get current twitts
+    const indexOfLastPost = currentPage * twittsPerPage;
+    const indexOfFirstPost = indexOfLastPost - twittsPerPage;
+    const currentTwitts = twitt.messages.slice(indexOfFirstPost, indexOfLastPost);
+
+    // Logic for displaying page numbers
+    const pageNumbers = [];
+    for (let i = 1; i <= Math.ceil(twitt.messages.length / twittsPerPage); i++) {
+      pageNumbers.push(i);
+      //console.log('printing the for looop', pageNumbers);
+    }
+
+    const renderPageNumbers = pageNumbers.map(number => {
+      //console.log(number);
+      return (
+        <li
+          key={number}
+          id={number}
+          onClick={this.handleClick}
+        >
+          {number}
+        </li>
+      );
+    });
+
     return (
       <div className="container App">
-        <div class="row">
-          <div class="col">
+        <div className="row">
+          <div className="col">
             <Navbar />
             <p className='subTitle'> What're traders saying about your stock?</p>
             <span className='subTitle'>Add it to your watch list and follow. </span>
           </div>
         </div>
 
-        <div class="row">
-          <div class="col col-md-6 offset-md-3">
+        <div className="row">
+          <div className="col col-md-6 offset-md-3">
             <WatchList
               addItem={this.addItem}
               inputElement={this.inputElement}
@@ -114,19 +167,27 @@ class App extends Component {
           </div>
         </div>
 
-        <div class="row" id='stockAndTwit'>
-          <div class="col col-md-4">
+        <div className="row" id='stockAndTwit'>
+          <div className="col col-md-4">
             <StockItems
               entries={this.state.items}
               deleteItem={this.deleteItem}
               loadTiwtts={this.loadTiwtts}
             />
           </div>
-          <div class="col col-md-8">
+          <div className="col col-md-8">
             <StockTwits
-              twitt={this.state.twitt}
+              twitt={currentTwitts}
+              symbol={this.state.twitt.symbol}
+              loading={this.state.loading}
+              renderPageNumbers={renderPageNumbers}
             />
+
+            <ul id="page-numbers">
+              {renderPageNumbers}
+            </ul>
           </div>
+
         </div>
       </div>
     );

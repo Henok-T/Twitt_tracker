@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from './assets/stocktwits-logo.png';
+import logo from '../assets/stocktwits-logo.png';
 
 const Navbar = props => {
     return (

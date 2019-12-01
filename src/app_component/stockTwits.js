@@ -5,43 +5,37 @@ import moment from 'moment';
 
 class StockTwits extends React.Component {
     render() {
-        console.log(this.props.twitt);
-        if (this.props.twitt.messages.length === 0) {
+        //console.log(this.props.twitt);
+
+        if (this.props.loading === true) {
+            return <div>Loading...</div>
+        }
+
+        if (this.props.twitt.length === 0) {
             return null;
         }
 
         return (
 
-            // <div>
-            //     {this.state.isLoading &&
-            //         <div>Loading.. please wait!</div>
-            //     }
-            //     {!this.state.isLoading &&
-            //         <div>My data has arrived!</div>
-            //     }
-            // </div>
-
             <div className="rounded clearfix py-2 " id='twittMessageItems'>
 
-
                 <h6>Twitt List for
-                       <span id='tickerName'> {this.props.twitt.symbol && ` ${this.props.twitt.symbol.title} `}</span>
-                    <span class='float-right' id='twittCount'>{this.props.twitt.messages && ` Total Twitts: ${this.props.twitt.messages.length}`}</span>
+                    {console.log('printing symbol', this.props)}
+                    <span id='tickerName'> {this.props.symbol && ` ${this.props.symbol.title} `}</span>
                 </h6>
 
                 {
-                    this.props.twitt.messages.map((msg, index) => {
+                    this.props.twitt.map((msg, index) => {
 
                         let postedImg = '';
                         let userAvatar = '';
                         if (msg.entities.chart) {
                             postedImg = msg.entities.chart.url;
-
                         }
+
                         if (msg.user.avatar_url) {
                             userAvatar = msg.user.avatar_url;
                         }
-
 
                         return (
                             <div className="twittLista cards bg-light  text-dark mb-2 border border-info rounded text-left" key={index.toString()}>
@@ -55,16 +49,11 @@ class StockTwits extends React.Component {
                                     </p>
                                 </div>
                             </div>
-
-
                         );
                     })
                 }
-            </div >
+            </div>
         );
-
-
-
     }
 };
 
