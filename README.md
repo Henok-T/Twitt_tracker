@@ -1,5 +1,18 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+
+This simple React application is created using the Stock Twits API. It pulls 30 tweets (3 tweets/page) from the Stock Twits that mentions a Stock Symbol. 
+- It allows the user to create a watch list of US stock symbol.
+- The user is able to remove symbols and the matching tweets are deleted as well. 
+- The webpage is responsive. 
+
+
+The published version can be seen [here](https://twitt-tracker.netlify.com/). 
+
+
+
+
+_____________________________________________________
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 ## Available Scripts
 
 In the project directory, you can run:
