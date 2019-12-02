@@ -137,6 +137,7 @@ class App extends Component {
       //console.log(number);
       return (
         <li
+          className='page-link px-2 py-1'
           key={number}
           id={number}
           onClick={this.handleClick}
@@ -183,7 +184,7 @@ class App extends Component {
               renderPageNumbers={renderPageNumbers}
             />
 
-            <ul id="page-numbers">
+            <ul className='pagination mw-100 d-flex justify-content-center' id="page-numbers">
               {renderPageNumbers}
             </ul>
           </div>

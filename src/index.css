@@ -234,10 +234,19 @@ code {
 
 #page-numbers > li {
   margin-right: 0.3em;
-  color: blue;
+  color: #000;
   user-select: none;
   cursor: pointer;
+  border-radius: 50%;
+  transition: transform .2s;
 }
+
+#page-numbers > li:hover {
+  transform: scale(1.2);
+  border:solid 1px #fff;
+  background:rgba(182, 233, 250, 0.568);
+}
+
 
 @media only screen and (max-width: 767px){
  
