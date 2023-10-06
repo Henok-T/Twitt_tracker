@@ -1,13 +1,13 @@
 body {
   margin: 0;
-  padding:30px!important;
+  padding: 30px !important;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: #090c1f url(../src/assets/N_N_unsplash.jpg) no-repeat center center fixed;
-   /* background: linear-gradient(180deg, black, transparent 20%), linear-gradient(360deg,
+  background: #090c1f url(../src/assets/stock.jpg) no-repeat center center fixed;
+  /* background: linear-gradient(180deg, black, transparent 20%), linear-gradient(360deg,
    #000, transparent 20%), #090c1f url(../src/assets/clock.png) no-repeat center center fixed; */
   background-size: cover;
   background-repeat: no-repeat;
@@ -16,6 +16,7 @@ body {
   max-height: 100%;
   margin: 0;
   overflow: scroll;
+  color: white;
 }
 
 code {
@@ -23,208 +24,217 @@ code {
     monospace;
 }
 
- .wathclistbtns{
-   padding: 4px;
- }
-
- .addToList{
-   padding-top:10px;
-   margin-bottom: 20px;
-   margin-top: 20px;
-   background: #0e09090f;
-   justify-content: center;
- }
-
-.addToList button{
-  margin-top:10px;
-  border-radius:20px;
+.wathclistbtns {
+  padding: 4px;
 }
 
-.addToList input{
-  background-color:transparent;  
-  color:#fff;
+.addToList {
+  padding-top: 10px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  background: #0e09090f;
+  justify-content: center;
+
+}
+
+.addToList button {
+  margin-top: 10px;
+  border-radius: 20px;
+}
+
+.addToList input {
+  background-color: transparent;
+  color: #f3f1f1 !important;
   border: 0;
   border-bottom: 2px solid seashell;
   border-radius: 0;
   text-align: center;
-    
+
 }
 
-.addToList input:focus{
+.addToList input:focus {
   background-color: transparent;
-  box-shadow:none;
+  box-shadow: none;
   outline: 0 none;
 }
-.addToList input::-webkit-input-placeholder{
-  color:gray;
+
+.addToList input::-webkit-input-placeholder {
+  color: rgb(212, 210, 210);
   font-style: italic;
   font-size: 12px;
 }
 
-#twittMessageItems{
+#twittMessageItems {
   background: #0e09090f;
   padding: 10px;
   list-style: none;
   overflow: hidden;
 
 }
- .watchListItems{
+
+.watchListItems {
   background: #0e09090f;
   padding: 5px;
   list-style: none;
-  
+
 }
 
 .watchListItems li {
   font-family: 'Ubuntu', sans-serif;
 }
 
-#twittBtn{
+#twittBtn {
   /* background:lightgray; */
   font-size: 13px;
   font-style: italic;
-  color:#000;
+  color: #000;
   border-style: solid;
   border-color: rgba(142, 188, 248, 0.767);
   border-radius: 50%;
 }
 
-#dltBtn{
+#dltBtn {
   font-size: 14px;
-  color:#000;
+  color: #000;
   border-style: solid;
   border-color: rgba(250, 152, 6, 0.726);
   border-radius: 50%;
 }
 
-#stockAndTwit{
-  background:transparent;
+#stockAndTwit {
+  background: transparent;
 }
 
-#twittBtn:hover{
+#twittBtn:hover {
   cursor: pointer;
   background: rgba(174, 227, 245, 0.63);
 }
 
-#dltBtn:hover{
+#dltBtn:hover {
   cursor: pointer;
   background: rgba(245, 172, 113, 0.719);
 }
 
-#headerWithLogo{
+#headerWithLogo {
   padding-top: 10px;
   padding-left: 0px;
   text-align: left;
   font-weight: 900;
-  color:#000;
+  color: #f5f2f2;
   position: relative;
-  
+
 }
 
 #headerWithLogo .brandName {
-  margin-top:11px;
+  margin-top: 11px;
   position: absolute;
   font-family: 'Titillium Web', sans-serif;
   font-weight: 900;
-  font-size:18px;
+  font-size: 18px;
   font-style: italic;
 }
 
-.card-text >.userName,  .card-text > .twitDate {
-  background:lightgray; 
-  color:#000;
+.card-text>.userName,
+.card-text>.twitDate {
+  background: lightgray;
+  color: #000;
   border-radius: 50%;
   font-size: 10px;
   font-style: italic;
-  
+
 }
 
 .card {
-  max-width: 100%!important;
-}
-.card-text {
-  word-wrap: break-word!important;
+  max-width: 100% !important;
 }
 
-#imgInPost{
-  width:100%;
+.card-text {
+  word-wrap: break-word !important;
+}
+
+#imgInPost {
+  width: 100%;
   overflow: hidden;
   align-self: center;
 }
 
-#userImg{
-  border-radius:50%;
-  margin-right:10px;
+#userImg {
+  border-radius: 50%;
+  margin-right: 10px;
 }
 
 #twittCount {
-  background:rgba(248, 248, 248, 0.404); 
-  color:#000;
-  padding:2px;
+  background: rgba(248, 248, 248, 0.404);
+  color: #000;
+  padding: 2px;
   font-size: 10px;
   font-style: italic;
-  margin-top:5px;
+  margin-top: 5px;
   border-bottom-right-radius: 7px;
   border-top-left-radius: 7px;
 }
 
 #addStockBtn {
-  background:#b6b8ad;
+  background: #b6b8ad;
   color: #000;
-  border:none;
-  font-size:14px;
+  border: none;
+  font-size: 14px;
   border: solid 1px lightblue;
 }
 
-#tickerName{
-  font-size:1.2rem;
+#tickerName {
+  font-size: 1.2rem;
   font-style: italic;
   border: solid 1px lightblue;
   padding: 5px;
-  border-radius:20px;
+  border-radius: 20px;
   margin-left: 5px;
 }
 
 
-#twittMessageItems > #loadMore { 
-  background:#b6b8ad;
+#twittMessageItems>#loadMore {
+  background: #b6b8ad;
   border: solid 1px lightblue;
-  font-size:14px;
+  font-size: 14px;
   text-align: center;
   transition: all 600ms ease-in-out;
   -webkit-transition: all 600ms ease-in-out;
   -moz-transition: all 600ms ease-in-out;
   -o-transition: all 600ms ease-in-out;
-  float:left;
-} 
+  float: left;
+}
+
 #loadMore:hover {
   background-color: #b9bab0;
   color: #fff;
-  border:none;
+  border: none;
 }
 
 #loadMore:focus {
   background-color: #b9bab0;
-  color:#000;
-  border:none;
+  color: #000;
+  border: none;
   box-shadow: none;
 }
+
 .totop {
   position: fixed;
   bottom: 15px;
   right: 20px;
   background-color: #b9bab0;
-  padding:5px;
+  padding: 5px;
   border-radius: 5px;
-  font-size:14px;
+  font-size: 14px;
   border: solid 1px lightblue;
 }
+
 .totop a {
   display: none;
-  color:#000!important;
-  text-decoration: none!important;
-  font-style:none;
+  color: #000 !important;
+  text-decoration: none !important;
+  font-style: none;
 }
+
 /* pagination */
 
 #page-numbers {
@@ -232,7 +242,7 @@ code {
   display: flex;
 }
 
-#page-numbers > li {
+#page-numbers>li {
   margin-right: 0.3em;
   color: #000;
   user-select: none;
@@ -241,43 +251,46 @@ code {
   transition: transform .2s;
 }
 
-#page-numbers > li:hover {
+#page-numbers>li:hover {
   transform: scale(1.2);
-  border:solid 1px #fff;
-  background:rgba(182, 233, 250, 0.568);
+  border: solid 1px #fff;
+  background: rgba(182, 233, 250, 0.568);
 }
 
 
-@media only screen and (max-width: 767px){
- 
+@media only screen and (max-width: 767px) {
+
   body {
-    padding:0px!important;
+    padding: 0px !important;
   }
 
-  #stockAndTwit{
+  #stockAndTwit {
     display: block;
   }
 
-  #headerWithLogo{
+  #headerWithLogo {
     font-size: 20px;
     font-weight: 100;
     position: relative;
     padding-left: 14%;
   }
 
-  .twitBody{
+  .twitBody {
     font-size: 12px;
   }
-  .App .subTitle, .App .subTitle span {
+
+  .App .subTitle,
+  .App .subTitle span {
     font-size: 13px;
   }
-  #tickerSymbol{
+
+  #tickerSymbol {
     font-size: 14px;
-    padding-top:10px!important;
+    padding-top: 10px !important;
   }
 
-  #twittCount{
+  #twittCount {
     display: none;
   }
-  
+
 }

@@ -88,9 +88,9 @@ class App extends Component {
 
     const stockName = text;
     try {
-      const proxyUrl = 'https://cors-anywhere.herokuapp.com/'
+      // const proxyUrl = 'https://cors-anywhere.herokuapp.com/'
       const targetUrl = `https://api.stocktwits.com/api/2/streams/symbol/${stockName}.json`
-      fetch(proxyUrl + targetUrl)
+      fetch(targetUrl)
         .then(res => res.json())
         .then(data => {
           //console.table(data);
