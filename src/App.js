@@ -1,3 +1,4 @@
+/* eslint-disable no-lone-blocks */
 import React, { Component } from 'react';
 import './App.css';
 import StockItems from './app_component/StockItems';
@@ -88,9 +89,10 @@ class App extends Component {
 
     const stockName = text;
     try {
-      // const proxyUrl = 'https://cors-anywhere.herokuapp.com/'
+      const proxyUrl = 'https://cors-anywhere.herokuapp.com/'
       const targetUrl = `https://api.stocktwits.com/api/2/streams/symbol/${stockName}.json`
-      fetch(targetUrl)
+      fetch(proxyUrl + targetUrl)
+
         .then(res => res.json())
         .then(data => {
           //console.table(data);
