@@ -20,7 +20,7 @@ class StockTwits extends React.Component {
             <div className="rounded clearfix py-2 " id='twittMessageItems'>
 
                 <h6>Twitt List for
-                    {console.log('printing symbol', this.props)}
+                    {/* {console.log('printing symbol', this.props)}*/}
                     <span id='tickerName'> {this.props.symbol && ` ${this.props.symbol.title} `}</span>
                 </h6>
 

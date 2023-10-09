@@ -1,0 +1,12 @@
+
+[[redirects]]
+  from = "https://api.stocktwits.com/api/2/streams/symbol/"
+  to = "https://twitt-tracker.netlify.app/"
+  status = 200
+  force = true
+  headers = {X-From = "Netlify"}
+
+[[headers]]
+for = “/"
+[headers.values]
+Access-Control-Allow-Origin = "https://twitt-tracker.netlify.app/”
